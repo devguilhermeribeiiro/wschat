@@ -1,0 +1,24 @@
+<div>
+  <h1 class="font-bold text-4xl">Login</h1>
+
+  <%= form_with url: sessions_path do |f| %>
+    <div>
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+    </div>
+
+    <div>
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+    </div>
+    
+    <div>
+      <%= f.submit "Entrar" %>
+    </div>
+  <% end %>
+
+  <div>
+    <span>Não tem uma conta?</span>
+    <%= link_to "Cadastre-se", signup_path %>
+  </div>
+</div>

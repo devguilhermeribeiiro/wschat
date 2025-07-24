@@ -24,6 +24,12 @@
 
   <body>
     <main class="container mx-auto mt-28 px-5 flex">
+      <% flash.each do |type, message| %>
+        <div class="alert alert-danger">
+          <%= message %>
+        </div>
+      <% end %>
+
       <%= yield %>
     </main>
   </body>

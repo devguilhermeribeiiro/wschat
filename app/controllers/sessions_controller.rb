@@ -9,12 +9,12 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to root_path, notice: "Logado com sucesso!"
     else
-      render :new
+      render :new, alert: "Email ou senha incorretos!"
     end
   end
 
   def destroy
     session[:user_id] = nil
-    redirect_to root_path, notice: "Sessão encerrada, faça login novamente para acessar o site"
+    redirect_to root_path, notice: "Sessão encerrada!"
   end
 end

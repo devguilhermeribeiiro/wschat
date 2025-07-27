@@ -1,0 +1,33 @@
+<div class="w-full max-w-2xl mx-auto bg-white border border-gray-300 rounded-md p-6">
+  <h2 id="room_name" class="text-xl font-semibold text-black mb-4">
+    <%= @room %>
+  </h2>
+
+  <div class="flex flex-col gap-4 h-60 overflow-y-auto p-3 bg-gray-200 rounded-md pt-4 mb-6" id="chat_history">
+    <!-- Mensagem recebida (esquerda) -->
+    <div class="flex justify-start">
+      <div class="bg-green-600 text-white font-semibold px-4 py-2 rounded-lg max-w-xs" id="message_received">
+      </div>
+    </div>
+
+    <!-- Mensagem enviada (direita) -->
+    <div class="flex justify-end">
+      <div class="flex flex-col gap-1 max-w-45%" id="message_sended">
+      </div>
+    </div>
+  </div>
+
+  <%= form_with url: "#", class: "message_form" do |f| %>
+    <div class="mb-4">
+      <%= f.text_field :message, rows: 3, 
+                       placeholder: "Digite sua mensagem...", 
+                       class: "w-full px-4 py-2 border border-blue-300 rounded-md focus:outline-none
+                       focus:ring-2 focus:ring-blue-500 focus:border-transparent text-black" %>
+    </div>
+
+    <div class="flex justify-end">
+      <%= f.submit "Enviar", class: "bg-blue-600 hover:bg-blue-700 text-white font-semibold 
+                             py-2 px-4 rounded-md transition duration-200" %>
+    </div>
+  <% end %>
+</div>

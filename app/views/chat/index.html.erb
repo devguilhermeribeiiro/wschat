@@ -1,0 +1,24 @@
+<div class="flex flex-col items-center">
+  <div class="w-full flex mb-6 justify-end">
+    <%= link_to "Sair", logout_path, class: "text-sm text-black hover:underline" %>
+  </div>
+  <div class="mb-6 items-center">
+    <h1 class="text-4xl font-bold text-black">Chat</h1>
+  </div>
+
+  <%= form_with url: "/chat", class: "space-y-4 mx-auto bg-white border border-blue-200 rounded-lg shadow-md p-6" do |f| %>
+    <h3 class="text-lg font-medium text-black mb-2">
+      Informe o nome da sala em que deseja se conectar
+    </h3>
+
+    <div class="flex flex-col gap-2">
+      <%= f.label :room, class: "text-sm font-medium text-gray-600" %>
+      <%= f.text_field :room, class: "px-4 py-2 border border-blue-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" %>
+    </div>
+
+    <div>
+      <%= f.submit "Iniciar chat", class: "w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md transition duration-200" %>
+    </div>
+  <% end %>
+</div>
+

@@ -3,10 +3,12 @@
     <%= @room %>
   </h2>
 
+  <span id="current_user" class="hidden"><%= @current_user.email %></span>
+
   <div class="flex flex-col gap-4 h-60 overflow-y-auto p-3 bg-gray-200 rounded-md pt-4 mb-6" id="chat_history">
     <!-- Mensagem recebida (esquerda) -->
     <div class="flex justify-start">
-      <div class="bg-green-600 text-white font-semibold px-4 py-2 rounded-lg max-w-xs" id="message_received">
+      <div class="flex flex-col gap-1 max-w-45%" id="message_received">
       </div>
     </div>
 

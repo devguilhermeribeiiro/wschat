@@ -6,6 +6,7 @@ class ChatController < ApplicationController
 
   def new_chat
     @room = params[:room]
+    @current_user = current_user
   end
 
   def create
